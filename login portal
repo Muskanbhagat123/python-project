@@ -1,0 +1,41 @@
+import random
+
+user_name="manav chandan"
+passwd="manav412"
+
+def login():
+    print("Enter your Details below")
+    user=input("Enter your Username: ")
+    pas=input("Enter your password:")
+    if (user==user_name and pas==passwd):
+        print("LOGIN SUCCESSFUL \n Welcome")
+    else:
+        print("Username OR Password incorrect!!")
+        print("Press 1 for Relogin \n 2 for Forget username/password:")
+        choice=int(input("Enter your choice: "))
+        if(choice==1):
+            login()
+        elif(choice==2):
+            otp()
+        else:
+            print("INVALID CHOICE!!")
+            print("Program Terminated")
+        
+def otp():
+    num_otp=random.randint(1000,9999)
+    print("OTP for Verification is: ",num_otp)
+    user_input=int(input("Enter OTP: "))
+    if(user_input==num_otp):
+        print("User Details :")
+        print("Username: ",user_name ,"     Password:", passwd)
+        login()
+    else:
+        print("OTP Verification Failed!")
+        print("Resend OTP? \n Press 1 to resend\n Any key to Exit:")
+        reotp=input("Enter your Choice: ")
+        if(reotp=='1'):
+            otp()
+        else:
+            print("Exiting Program")
+        
+login()

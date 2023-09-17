@@ -1,0 +1,5 @@
+def addition(n):
+    total=sum(range(1,n+1))
+    return total
+n=int(input("enter the num"))
+print (addition(n))

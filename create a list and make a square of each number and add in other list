@@ -1,0 +1,5 @@
+l=[2,4,6,7]
+print("ist list",':',l)
+n2=[]
+n2=[(nums**2) for nums in l]
+print("new list",':',n2)
